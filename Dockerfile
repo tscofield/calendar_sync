@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y apache2 git ruby ruby-dev && apt-get cl
 # clone the patch-1 branch
 RUN mkdir -p /usr/local/bin && cd /usr/local/bin && git clone -b patch-1 https://github.com/tscofield/ical-to-google-calendar.git 
 RUN mkdir -p /usr/local/bin && cd /usr/local/bin && git clone https://github.com/yvangodard/icalsync.git
+RUN ls -l /usr/local/bin
 RUN /usr/local/bin/icalsync/icalsync -h
 
 #Remove git, we only needed it for setup 
