@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 
 MAINTAINER Tom Scofield version: 0.1
 
-RUN apt-get update && apt-get install -y apache2 git ruby ruby-dev && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y apache2 git ruby ruby-dev bundler && apt-get clean && rm -rf /var/lib/apt/lists/*
 # clone the patch-1 branch
 RUN mkdir -p /usr/local/bin && cd /usr/local/bin && git clone -b patch-1 https://github.com/tscofield/ical-to-google-calendar.git 
 RUN mkdir -p /usr/local/bin && cd /usr/local/bin && git clone https://github.com/yvangodard/icalsync.git
