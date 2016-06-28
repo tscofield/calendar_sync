@@ -9,10 +9,11 @@ RUN mkdir -p /usr/local/bin && cd /usr/local/bin && git clone https://github.com
 RUN mkdir -p /usr/local/bin && cd /usr/local/bin && git clone https://github.com/yvangodard/icalsync.git
 RUN ls -l /usr/local/bin
 # install some ruby gems
-RUN gem install addressable -v '2.3.7'
-RUN gem install coderay -v '1.1.0'
-RUN gem install extlib -v '0.9.16'
-RUN gem install multipart-post -v '2.0.0'
+RUN cd /usr/local/vin/icalsync && gem install icalsync && bundle install icalsync
+#RUN gem install addressable -v '2.3.7'
+#RUN gem install coderay -v '1.1.0'
+#RUN gem install extlib -v '0.9.16'
+#RUN gem install multipart-post -v '2.0.0'
 RUN cd /usr/local/bin/icalsync && /usr/local/bin/icalsync/icalsync -h
 
 #Remove git, we only needed it for setup 
