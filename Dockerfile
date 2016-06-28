@@ -9,7 +9,7 @@ RUN mkdir -p /usr/local/bin && cd /usr/local/bin && git clone -b patch-1 https:/
 RUN mkdir -p /usr/local/bin && cd /usr/local/bin && git clone https://github.com/yvangodard/icalsync.git
 RUN ls -l /usr/local/bin
 # install some ruby gems
-RUN gem install addressable
+RUN gem install addressable -v '2.3.7'
 RUN cd /usr/local/bin/icalsync && /usr/local/bin/icalsync/icalsync -h
 
 #Remove git, we only needed it for setup 
